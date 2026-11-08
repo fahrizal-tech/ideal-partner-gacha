@@ -300,16 +300,9 @@
     if (index < 0 || index >= STAGES.length) return;
 
     const unit = document.getElementById(`unit-${STAGES[index].key}`);
-    const circle = unit.querySelector('.bubble-circle');
-    const containerRect = ropeContainer.getBoundingClientRect();
-    const circleRect = circle.getBoundingClientRect();
-
-    if (containerRect.width > 0 && circleRect.width > 0) {
-      const centerX = (circleRect.left + circleRect.width / 2) - containerRect.left;
+    if (unit) {
+      const centerX = unit.offsetLeft + (unit.offsetWidth / 2);
       ropeSliderKnob.style.left = `${centerX}px`;
-    } else {
-      const fallback = (index / (STAGES.length - 1)) * 88 + 6;
-      ropeSliderKnob.style.left = `${fallback}%`;
     }
 
     const fillPercent = (index / (STAGES.length - 1)) * 100;
@@ -384,16 +377,8 @@
   }
 
   function getAvailablePool(key) {
-    let pool = [...DATA[key]];
-    if (key === 'gender') {
-      const pref = document.querySelector('input[name="genderPref"]:checked')?.value || 'any';
-      if (pref === 'male') {
-        pool = pool.filter((item) => item.type === 'male');
-      } else if (pref === 'female') {
-        pool = pool.filter((item) => item.type === 'female');
-      }
-    }
-    return pool;
+    // Only "Any" mode - draws equally from the full dataset
+    return [...DATA[key]];
   }
 
   function spinUnit(key, onDone) {
@@ -461,6 +446,15 @@
     const current = STAGES[index];
 
     updateRopeTrack(index);
+
+    // Auto-scroll track on smartphone/tablet so active bubble is centered
+    const ropeScrollWrapper = document.getElementById('ropeScrollWrapper');
+    const unit = document.getElementById(`unit-${current.key}`);
+    if (ropeScrollWrapper && unit && ropeScrollWrapper.scrollWidth > ropeScrollWrapper.clientWidth) {
+      const scrollTarget = unit.offsetLeft - (ropeScrollWrapper.clientWidth / 2) + (unit.offsetWidth / 2);
+      ropeScrollWrapper.scrollTo({ left: Math.max(0, scrollTarget), behavior: 'smooth' });
+    }
+
     statusMessage.textContent = `Station ${index + 1} of 7: ${current.title}`;
 
     const travelTime = state.isFast ? 180 : 320;

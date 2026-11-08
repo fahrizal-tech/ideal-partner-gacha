@@ -106,47 +106,6 @@ body {
   gap: 20px;
 }
 
-.segmented-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.segmented-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.segmented-tabs {
-  display: flex;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-dark);
-  border-radius: var(--radius-sm);
-  padding: 2px;
-  gap: 2px;
-}
-
-.tab-item input {
-  display: none;
-}
-
-.tab-item span {
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  padding: 5px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.tab-item input:checked + span {
-  background: var(--color-blue);
-  color: var(--color-white);
-}
-
 .utility-buttons {
   display: flex;
   align-items: center;
@@ -225,7 +184,21 @@ body {
   color: var(--text-muted);
 }
 
-/* ================= ROPE CONTAINER ================= */
+/* ================= ROPE SCROLL WRAPPER & CONTAINER ================= */
+.rope-scroll-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 10px 0;
+}
+
+.rope-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 .rope-container {
   width: 100%;
   position: relative;
@@ -238,8 +211,8 @@ body {
 /* Physical Rope Line */
 .rope-line-track {
   position: absolute;
-  left: 6%;
-  right: 6%;
+  left: 60px;
+  right: 60px;
   top: 60%;
   height: 4px;
   transform: translateY(-50%);
@@ -712,4 +685,118 @@ body {
 
 .btn-card-action.btn-secondary:hover {
   background: #f1f5f9;
+}
+
+/* ================= RESPONSIVE DESIGN (SMARTPHONES & TABLETS) ================= */
+@media (max-width: 992px) {
+  .app-layout {
+    padding: 20px 24px;
+  }
+
+  .rope-container {
+    min-width: 860px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-layout {
+    padding: 16px 14px;
+    min-height: 100vh;
+  }
+
+  .top-bar {
+    padding-bottom: 14px;
+  }
+
+  .brand-title {
+    font-size: 1rem;
+  }
+
+  .utility-buttons {
+    gap: 6px;
+  }
+
+  .btn-util {
+    padding: 5px 10px;
+    font-size: 0.72rem;
+  }
+
+  .main-workspace {
+    padding: 18px 0;
+  }
+
+  .workspace-header {
+    margin-bottom: 24px;
+  }
+
+  .workspace-instructions {
+    font-size: 0.78rem;
+    padding: 0 8px;
+  }
+
+  .rope-container {
+    min-width: 800px;
+    padding: 60px 0 24px 0;
+  }
+
+  .bottom-bar {
+    flex-direction: column-reverse;
+    gap: 12px;
+    align-items: stretch;
+    text-align: center;
+    padding-top: 16px;
+  }
+
+  .meta-status {
+    text-align: center;
+    font-size: 0.78rem;
+  }
+
+  .action-wrap {
+    width: 100%;
+  }
+
+  .btn-execute {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .modal-scrim {
+    padding: 14px;
+  }
+
+  .profile-card {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .identity-title {
+    font-size: 1.1rem;
+  }
+
+  .spec-row {
+    padding: 8px 10px;
+  }
+
+  .spec-key {
+    font-size: 0.72rem;
+  }
+
+  .spec-val {
+    font-size: 0.8rem;
+  }
+
+  .card-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-card-action {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.88rem;
+  }
 }

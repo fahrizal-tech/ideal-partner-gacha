@@ -19,24 +19,6 @@
       </div>
 
       <div class="top-controls">
-        <div class="segmented-wrapper">
-          <span class="segmented-label">Target</span>
-          <div class="segmented-tabs">
-            <label class="tab-item">
-              <input type="radio" name="genderPref" value="any" checked>
-              <span>Any</span>
-            </label>
-            <label class="tab-item">
-              <input type="radio" name="genderPref" value="male">
-              <span>Male</span>
-            </label>
-            <label class="tab-item">
-              <input type="radio" name="genderPref" value="female">
-              <span>Female</span>
-            </label>
-          </div>
-        </div>
-
         <div class="utility-buttons">
           <button class="btn-util" id="speedToggle" type="button" title="Toggle Speed">
             <span id="speedLabel">Fast Mode: Off</span>
@@ -58,8 +40,9 @@
         <p class="workspace-instructions">The indicator moves sequentially from left to right across each attribute.</p>
       </div>
 
-      <!-- Horizontal Rope & 7 Large Bubbles -->
-      <div class="rope-container" id="ropeContainer">
+      <!-- Horizontal Rope & 7 Large Bubbles (Responsive Scrollable Track) -->
+      <div class="rope-scroll-wrapper" id="ropeScrollWrapper">
+        <div class="rope-container" id="ropeContainer">
         <!-- Physical Rope Bar -->
         <div class="rope-line-track">
           <div class="rope-line-fill" id="ropeLineFill"></div>
@@ -236,6 +219,7 @@
             <span class="bubble-caption">7. Personality</span>
           </div>
         </div>
+      </div>
       </div>
     </main>
 
