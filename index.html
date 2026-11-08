@@ -51,7 +51,7 @@
         <!-- Sliding Knob / Traveler on the Rope -->
         <div class="rope-slider-knob" id="ropeSliderKnob"></div>
 
-        <!-- 7 Large Circular Bubbles -->
+        <!-- 9 Large Circular Bubbles Along the Rope -->
         <div class="bubbles-row" id="bubblesRow">
           <!-- 1. Gender -->
           <div class="bubble-unit active" data-index="0" data-key="gender" id="unit-gender">
@@ -77,8 +77,35 @@
             <span class="bubble-caption">1. Gender</span>
           </div>
 
-          <!-- 2. Age -->
-          <div class="bubble-unit" data-index="1" data-key="age" id="unit-age">
+          <!-- 2. Name -->
+          <div class="bubble-unit" data-index="1" data-key="name" id="unit-name">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Name</span>
+              <span class="tag-value" id="val-name">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+                  <circle cx="9" cy="10" r="2"></circle>
+                  <line x1="15" y1="8" x2="17" y2="8"></line>
+                  <line x1="15" y1="12" x2="17" y2="12"></line>
+                  <line x1="7" y1="16" x2="17" y2="16"></line>
+                </svg>
+                <span class="bubble-ticker" id="ticker-name">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="name" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">2. Name</span>
+          </div>
+
+          <!-- 3. Age -->
+          <div class="bubble-unit" data-index="2" data-key="age" id="unit-age">
             <div class="bubble-result-tag">
               <span class="tag-title">Age</span>
               <span class="tag-value" id="val-age">—</span>
@@ -98,11 +125,34 @@
                 </svg>
               </button>
             </div>
-            <span class="bubble-caption">2. Age</span>
+            <span class="bubble-caption">3. Age</span>
           </div>
 
-          <!-- 3. Height -->
-          <div class="bubble-unit" data-index="2" data-key="height" id="unit-height">
+          <!-- 4. Zodiac -->
+          <div class="bubble-unit" data-index="3" data-key="zodiac" id="unit-zodiac">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Zodiac</span>
+              <span class="tag-value" id="val-zodiac">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l2.4 7.4L22 12l-7.6 2.6L12 22l-2.4-7.4L2 12l7.6-2.6z"></path>
+                </svg>
+                <span class="bubble-ticker" id="ticker-zodiac">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="zodiac" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">4. Zodiac</span>
+          </div>
+
+          <!-- 5. Height -->
+          <div class="bubble-unit" data-index="4" data-key="height" id="unit-height">
             <div class="bubble-result-tag">
               <span class="tag-title">Height</span>
               <span class="tag-value" id="val-height">—</span>
@@ -123,11 +173,11 @@
                 </svg>
               </button>
             </div>
-            <span class="bubble-caption">3. Height</span>
+            <span class="bubble-caption">5. Height</span>
           </div>
 
-          <!-- 4. Weight -->
-          <div class="bubble-unit" data-index="3" data-key="weight" id="unit-weight">
+          <!-- 6. Weight -->
+          <div class="bubble-unit" data-index="5" data-key="weight" id="unit-weight">
             <div class="bubble-result-tag">
               <span class="tag-title">Weight</span>
               <span class="tag-value" id="val-weight">—</span>
@@ -146,13 +196,13 @@
                 </svg>
               </button>
             </div>
-            <span class="bubble-caption">4. Weight</span>
+            <span class="bubble-caption">6. Weight</span>
           </div>
 
-          <!-- 5. Occupation -->
-          <div class="bubble-unit" data-index="4" data-key="job" id="unit-job">
+          <!-- 7. Occupation -->
+          <div class="bubble-unit" data-index="6" data-key="job" id="unit-job">
             <div class="bubble-result-tag">
-              <span class="tag-title">Occupation</span>
+              <span class="tag-title">Job</span>
               <span class="tag-value" id="val-job">—</span>
             </div>
             <div class="bubble-circle">
@@ -170,36 +220,37 @@
                 </svg>
               </button>
             </div>
-            <span class="bubble-caption">5. Occupation</span>
+            <span class="bubble-caption">7. Job</span>
           </div>
 
-          <!-- 6. Hobby -->
-          <div class="bubble-unit" data-index="5" data-key="hobby" id="unit-hobby">
+          <!-- 8. Salary -->
+          <div class="bubble-unit" data-index="7" data-key="salary" id="unit-salary">
             <div class="bubble-result-tag">
-              <span class="tag-title">Hobby</span>
-              <span class="tag-value" id="val-hobby">—</span>
+              <span class="tag-title">Salary</span>
+              <span class="tag-value" id="val-salary">—</span>
             </div>
             <div class="bubble-circle">
               <div class="bubble-inner">
                 <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
-                <span class="bubble-ticker" id="ticker-hobby">Ready</span>
+                <span class="bubble-ticker" id="ticker-salary">Ready</span>
               </div>
-              <button class="bubble-lock-toggle" data-key="hobby" title="Lock this attribute" type="button">
+              <button class="bubble-lock-toggle" data-key="salary" title="Lock this attribute" type="button">
                 <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                   <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                 </svg>
               </button>
             </div>
-            <span class="bubble-caption">6. Hobby</span>
+            <span class="bubble-caption">8. Salary</span>
           </div>
 
-          <!-- 7. Personality -->
-          <div class="bubble-unit" data-index="6" data-key="personality" id="unit-personality">
+          <!-- 9. Personality (MBTI) -->
+          <div class="bubble-unit" data-index="8" data-key="personality" id="unit-personality">
             <div class="bubble-result-tag">
-              <span class="tag-title">Personality</span>
+              <span class="tag-title">MBTI</span>
               <span class="tag-value" id="val-personality">—</span>
             </div>
             <div class="bubble-circle">
@@ -216,7 +267,7 @@
                 </svg>
               </button>
             </div>
-            <span class="bubble-caption">7. Personality</span>
+            <span class="bubble-caption">9. Personality</span>
           </div>
         </div>
       </div>
@@ -263,8 +314,16 @@
 
         <div class="spec-table">
           <div class="spec-row">
+            <span class="spec-key">Name</span>
+            <span class="spec-val" id="cardResName">—</span>
+          </div>
+          <div class="spec-row">
             <span class="spec-key">Gender & Age</span>
             <span class="spec-val" id="cardResGenderAge">—</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Zodiac Sign</span>
+            <span class="spec-val" id="cardResZodiac">—</span>
           </div>
           <div class="spec-row">
             <span class="spec-key">Physical Build</span>
@@ -275,11 +334,11 @@
             <span class="spec-val" id="cardResJob">—</span>
           </div>
           <div class="spec-row">
-            <span class="spec-key">Hobby</span>
-            <span class="spec-val" id="cardResHobby">—</span>
+            <span class="spec-key">Monthly Salary</span>
+            <span class="spec-val" id="cardResSalary">—</span>
           </div>
           <div class="spec-row">
-            <span class="spec-key">Personality</span>
+            <span class="spec-key">Personality (MBTI)</span>
             <span class="spec-val" id="cardResPersonality">—</span>
           </div>
         </div>

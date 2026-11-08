@@ -96,11 +96,57 @@
     }
   }
 
-  // --- EXPANDED DATA DICTIONARY (Fun Ranges: Age to 200, Height to 300cm, Weight to 300kg) ---
+  // --- EXPANDED DATA DICTIONARY ---
   const DATA = {
     gender: [
       { text: 'Male', val: 'Male', type: 'male' },
       { text: 'Female', val: 'Female', type: 'female' }
+    ],
+
+    name: [
+      // 20 Short Male Names with Initials
+      { text: 'A. Alex', val: 'A. Alex', gender: 'male' },
+      { text: 'B. Ben', val: 'B. Ben', gender: 'male' },
+      { text: 'C. Cole', val: 'C. Cole', gender: 'male' },
+      { text: 'D. Dan', val: 'D. Dan', gender: 'male' },
+      { text: 'E. Eric', val: 'E. Eric', gender: 'male' },
+      { text: 'F. Finn', val: 'F. Finn', gender: 'male' },
+      { text: 'G. Gabe', val: 'G. Gabe', gender: 'male' },
+      { text: 'H. Hugo', val: 'H. Hugo', gender: 'male' },
+      { text: 'I. Ian', val: 'I. Ian', gender: 'male' },
+      { text: 'J. Jack', val: 'J. Jack', gender: 'male' },
+      { text: 'K. Kai', val: 'K. Kai', gender: 'male' },
+      { text: 'L. Leo', val: 'L. Leo', gender: 'male' },
+      { text: 'M. Max', val: 'M. Max', gender: 'male' },
+      { text: 'N. Noah', val: 'N. Noah', gender: 'male' },
+      { text: 'O. Owen', val: 'O. Owen', gender: 'male' },
+      { text: 'P. Paul', val: 'P. Paul', gender: 'male' },
+      { text: 'R. Ryan', val: 'R. Ryan', gender: 'male' },
+      { text: 'S. Sam', val: 'S. Sam', gender: 'male' },
+      { text: 'T. Toby', val: 'T. Toby', gender: 'male' },
+      { text: 'Z. Zack', val: 'Z. Zack', gender: 'male' },
+
+      // 20 Short Female Names with Initials
+      { text: 'A. Ava', val: 'A. Ava', gender: 'female' },
+      { text: 'B. Bea', val: 'B. Bea', gender: 'female' },
+      { text: 'C. Chloe', val: 'C. Chloe', gender: 'female' },
+      { text: 'D. Dana', val: 'D. Dana', gender: 'female' },
+      { text: 'E. Emma', val: 'E. Emma', gender: 'female' },
+      { text: 'F. Faye', val: 'F. Faye', gender: 'female' },
+      { text: 'G. Grace', val: 'G. Grace', gender: 'female' },
+      { text: 'H. Hope', val: 'H. Hope', gender: 'female' },
+      { text: 'I. Ivy', val: 'I. Ivy', gender: 'female' },
+      { text: 'J. Jade', val: 'J. Jade', gender: 'female' },
+      { text: 'K. Kira', val: 'K. Kira', gender: 'female' },
+      { text: 'L. Luna', val: 'L. Luna', gender: 'female' },
+      { text: 'M. Mia', val: 'M. Mia', gender: 'female' },
+      { text: 'N. Nora', val: 'N. Nora', gender: 'female' },
+      { text: 'O. Olive', val: 'O. Olive', gender: 'female' },
+      { text: 'P. Piper', val: 'P. Piper', gender: 'female' },
+      { text: 'R. Ruby', val: 'R. Ruby', gender: 'female' },
+      { text: 'S. Sara', val: 'S. Sara', gender: 'female' },
+      { text: 'T. Tara', val: 'T. Tara', gender: 'female' },
+      { text: 'Z. Zoe', val: 'Z. Zoe', gender: 'female' }
     ],
 
     age: [
@@ -121,6 +167,21 @@
       { text: '92 y/o', val: '92 Years Old' },
       { text: '97 y/o', val: '97 Years Old' },
       { text: '100 y/o', val: '100 Years Old' }
+    ],
+
+    zodiac: [
+      { text: 'Aries', val: 'Aries' },
+      { text: 'Taurus', val: 'Taurus' },
+      { text: 'Gemini', val: 'Gemini' },
+      { text: 'Cancer', val: 'Cancer' },
+      { text: 'Leo', val: 'Leo' },
+      { text: 'Virgo', val: 'Virgo' },
+      { text: 'Libra', val: 'Libra' },
+      { text: 'Scorpio', val: 'Scorpio' },
+      { text: 'Sagittarius', val: 'Sagittarius' },
+      { text: 'Capricorn', val: 'Capricorn' },
+      { text: 'Aquarius', val: 'Aquarius' },
+      { text: 'Pisces', val: 'Pisces' }
     ],
 
     height: [
@@ -157,71 +218,76 @@
     ],
 
     job: [
-      { text: 'Software Engineer', val: 'Software Engineer' },
-      { text: 'Medical Doctor', val: 'Medical Doctor' },
-      { text: 'Commercial Pilot', val: 'Commercial Pilot' },
+      { text: 'Doctor', val: 'Doctor' },
+      { text: 'Pilot', val: 'Pilot' },
+      { text: 'Chef', val: 'Chef' },
+      { text: 'Lawyer', val: 'Lawyer' },
+      { text: 'Artist', val: 'Artist' },
+      { text: 'Nurse', val: 'Nurse' },
+      { text: 'Writer', val: 'Writer' },
+      { text: 'Driver', val: 'Driver' },
+      { text: 'Teacher', val: 'Teacher' },
+      { text: 'Banker', val: 'Banker' },
+      { text: 'Engineer', val: 'Engineer' },
+      { text: 'Police', val: 'Police' },
+      { text: 'Model', val: 'Model' },
+      { text: 'Trader', val: 'Trader' },
       { text: 'Architect', val: 'Architect' },
-      { text: 'Quantum Physicist', val: 'Quantum Physicist' },
-      { text: 'Deep Sea Archaeologist', val: 'Deep Sea Archaeologist' },
-      { text: 'Astronaut Trainee', val: 'Astronaut Trainee' },
-      { text: 'Lighthouse Keeper', val: 'Lighthouse Keeper' },
-      { text: 'Master Blacksmith', val: 'Master Blacksmith' },
-      { text: 'Private Island Caretaker', val: 'Private Island Caretaker' },
-      { text: 'Antique Book Collector', val: 'Antique Book Collector' },
-      { text: 'Formula 1 Mechanic', val: 'Formula 1 Mechanic' },
-      { text: 'Wildlife Photographer', val: 'Wildlife Photographer' },
-      { text: 'High-Stakes Sommelier', val: 'High-Stakes Sommelier' },
-      { text: 'Botanical Explorer', val: 'Botanical Explorer' },
-      { text: 'Medieval Historian', val: 'Medieval Historian' },
-      { text: 'Art Restorer', val: 'Art Restorer' },
-      { text: 'Chess Grandmaster', val: 'Chess Grandmaster' },
-      { text: 'Submarine Navigator', val: 'Submarine Navigator' },
-      { text: 'Meteorite Hunter', val: 'Meteorite Hunter' }
+      { text: 'Designer', val: 'Designer' },
+      { text: 'Actor', val: 'Actor' },
+      { text: 'Scientist', val: 'Scientist' },
+      { text: 'Barista', val: 'Barista' },
+      { text: 'Athlete', val: 'Athlete' }
     ],
 
-    hobby: [
-      { text: 'Astrophotography', val: 'Astrophotography' },
-      { text: 'Extreme Mountaineering', val: 'Extreme Mountaineering' },
-      { text: 'High-Altitude Skydiving', val: 'High-Altitude Skydiving' },
-      { text: 'Playing Classical Cello', val: 'Playing Classical Cello' },
-      { text: 'Collecting Rare Minerals', val: 'Collecting Rare Minerals' },
-      { text: 'Bonsai Cultivation', val: 'Bonsai Cultivation' },
-      { text: 'Beach Metal Detecting', val: 'Beach Metal Detecting' },
-      { text: 'Cave Scuba Diving', val: 'Cave Scuba Diving' },
-      { text: 'Sourdough Fermentation', val: 'Sourdough Fermentation' },
-      { text: 'Mechanical Clock Craft', val: 'Mechanical Clock Craft' },
-      { text: 'Motorcycle Restoration', val: 'Motorcycle Restoration' },
-      { text: 'Deep Sea Fishing', val: 'Deep Sea Fishing' },
-      { text: 'Urban Exploration', val: 'Urban Exploration' },
-      { text: 'Mystery Writing', val: 'Writing Mystery Novels' },
-      { text: 'Falconry Training', val: 'Falconry Training' },
-      { text: 'Antique Restoration', val: 'Antique Restoration' }
+    salary: [
+      { text: '$10/mo', val: '$10 / month' },
+      { text: '$35/mo', val: '$35 / month' },
+      { text: '$90/mo', val: '$90 / month' },
+      { text: '$250/mo', val: '$250 / month' },
+      { text: '$600/mo', val: '$600 / month' },
+      { text: '$1,200/mo', val: '$1,200 / month' },
+      { text: '$2,500/mo', val: '$2,500 / month' },
+      { text: '$4,800/mo', val: '$4,800 / month' },
+      { text: '$8,500/mo', val: '$8,500 / month' },
+      { text: '$15,000/mo', val: '$15,000 / month' },
+      { text: '$30,000/mo', val: '$30,000 / month' },
+      { text: '$75,000/mo', val: '$75,000 / month' },
+      { text: '$150,000/mo', val: '$150,000 / month' },
+      { text: '$500,000/mo', val: '$500,000 / month' },
+      { text: '$1,000,000/mo', val: '$1,000,000 / month' }
     ],
 
     personality: [
-      { text: 'Empathetic & Warm', val: 'Empathetic & Warm' },
-      { text: 'Stoic & Immovable', val: 'Stoic & Immovable' },
-      { text: 'Quietly Brilliant', val: 'Quietly Brilliant' },
-      { text: 'Boundlessly Optimistic', val: 'Boundlessly Optimistic' },
-      { text: 'Chronically Sarcastic', val: 'Chronically Sarcastic' },
-      { text: 'Fiercely Protective', val: 'Fiercely Protective' },
-      { text: 'Highly Philosophical', val: 'Highly Philosophical' },
-      { text: 'Eccentric & Curious', val: 'Eccentric & Curious' },
-      { text: 'Methodical & Precise', val: 'Methodical & Precise' },
-      { text: 'Gentle & Patient', val: 'Gentle & Patient' },
-      { text: 'Fearless & Direct', val: 'Fearless & Direct' },
-      { text: 'Unpredictably Creative', val: 'Unpredictably Creative' }
+      { text: 'INTJ', val: 'INTJ' },
+      { text: 'INTP', val: 'INTP' },
+      { text: 'ENTJ', val: 'ENTJ' },
+      { text: 'ENTP', val: 'ENTP' },
+      { text: 'INFJ', val: 'INFJ' },
+      { text: 'INFP', val: 'INFP' },
+      { text: 'ENFJ', val: 'ENFJ' },
+      { text: 'ENFP', val: 'ENFP' },
+      { text: 'ISTJ', val: 'ISTJ' },
+      { text: 'ISFJ', val: 'ISFJ' },
+      { text: 'ESTJ', val: 'ESTJ' },
+      { text: 'ESFJ', val: 'ESFJ' },
+      { text: 'ISTP', val: 'ISTP' },
+      { text: 'ISFP', val: 'ISFP' },
+      { text: 'ESTP', val: 'ESTP' },
+      { text: 'ESFP', val: 'ESFP' }
     ]
   };
 
   const STAGES = [
     { key: 'gender', title: 'Gender' },
+    { key: 'name', title: 'Name' },
     { key: 'age', title: 'Age' },
+    { key: 'zodiac', title: 'Zodiac' },
     { key: 'height', title: 'Height' },
     { key: 'weight', title: 'Weight' },
     { key: 'job', title: 'Occupation' },
-    { key: 'hobby', title: 'Hobby' },
-    { key: 'personality', title: 'Personality' }
+    { key: 'salary', title: 'Salary' },
+    { key: 'personality', title: 'MBTI' }
   ];
 
   // --- APPLICATION STATE ---
@@ -231,20 +297,24 @@
     isFast: false,
     locked: {
       gender: null,
+      name: null,
       age: null,
+      zodiac: null,
       height: null,
       weight: null,
       job: null,
-      hobby: null,
+      salary: null,
       personality: null
     },
     results: {
       gender: null,
+      name: null,
       age: null,
+      zodiac: null,
       height: null,
       weight: null,
       job: null,
-      hobby: null,
+      salary: null,
       personality: null
     }
   };
@@ -273,10 +343,12 @@
 
   const cardPrimaryTitle = document.getElementById('cardPrimaryTitle');
   const cardSecondaryTitle = document.getElementById('cardSecondaryTitle');
+  const cardResName = document.getElementById('cardResName');
   const cardResGenderAge = document.getElementById('cardResGenderAge');
+  const cardResZodiac = document.getElementById('cardResZodiac');
   const cardResPhysical = document.getElementById('cardResPhysical');
   const cardResJob = document.getElementById('cardResJob');
-  const cardResHobby = document.getElementById('cardResHobby');
+  const cardResSalary = document.getElementById('cardResSalary');
   const cardResPersonality = document.getElementById('cardResPersonality');
 
   // --- CONTROLS LISTENERS ---
@@ -377,7 +449,15 @@
   }
 
   function getAvailablePool(key) {
-    // Only "Any" mode - draws equally from the full dataset
+    if (key === 'name') {
+      const g = state.results.gender?.val;
+      if (g === 'Male') {
+        return DATA.name.filter(item => item.gender === 'male');
+      } else if (g === 'Female') {
+        return DATA.name.filter(item => item.gender === 'female');
+      }
+      return [...DATA.name];
+    }
     return [...DATA[key]];
   }
 
@@ -455,7 +535,7 @@
       ropeScrollWrapper.scrollTo({ left: Math.max(0, scrollTarget), behavior: 'smooth' });
     }
 
-    statusMessage.textContent = `Station ${index + 1} of 7: ${current.title}`;
+    statusMessage.textContent = `Station ${index + 1} of ${STAGES.length}: ${current.title}`;
 
     const travelTime = state.isFast ? 180 : 320;
 
@@ -479,13 +559,15 @@
 
     const res = state.results;
 
-    cardPrimaryTitle.textContent = `${res.gender?.val || 'Partner'}, ${res.age?.val || '25'}`;
-    cardSecondaryTitle.textContent = `${res.job?.val || 'Professional'} • ${res.hobby?.val || 'General Interests'}`;
+    cardPrimaryTitle.textContent = `${res.name?.val || 'Partner'}, ${res.age?.val || '25'}`;
+    cardSecondaryTitle.textContent = `${res.job?.val || 'Professional'} • ${res.zodiac?.val || 'Zodiac'} • ${res.salary?.val || '$5,000 / month'}`;
 
+    cardResName.textContent = res.name?.val || 'Not specified';
     cardResGenderAge.textContent = `${res.gender?.val || 'Not specified'}, ${res.age?.val || '25 Years Old'}`;
+    cardResZodiac.textContent = res.zodiac?.val || 'Not specified';
     cardResPhysical.textContent = `${res.height?.val || '175 cm'} / ${res.weight?.val || '65 kg'}`;
     cardResJob.textContent = res.job?.val || 'Not specified';
-    cardResHobby.textContent = res.hobby?.val || 'Not specified';
+    cardResSalary.textContent = res.salary?.val || 'Not specified';
     cardResPersonality.textContent = res.personality?.val || 'Not specified';
 
     sound.completionChime();
@@ -525,7 +607,7 @@
     const canvas = exportCanvas;
     const ctx = canvas.getContext('2d');
     const width = 760;
-    const height = 800;
+    const height = 860;
     canvas.width = width;
     canvas.height = height;
 
@@ -540,69 +622,71 @@
 
     // Header Badge
     ctx.fillStyle = '#2563eb';
-    ctx.fillRect(50, 50, 130, 28);
+    ctx.fillRect(50, 45, 130, 28);
     ctx.fillStyle = '#ffffff';
     ctx.font = 'bold 12px "Plus Jakarta Sans", sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('PARTNER PROFILE', 115, 64);
+    ctx.fillText('PARTNER PROFILE', 115, 59);
 
     // Title & Subtitle
     ctx.textAlign = 'left';
     ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
-    ctx.fillText(cardPrimaryTitle.textContent, 50, 125);
+    ctx.font = 'bold 26px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText(cardPrimaryTitle.textContent, 50, 115);
 
     ctx.fillStyle = '#64748b';
-    ctx.font = '500 15px "Plus Jakarta Sans", sans-serif';
-    ctx.fillText(cardSecondaryTitle.textContent, 50, 155);
+    ctx.font = '500 14px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText(cardSecondaryTitle.textContent, 50, 142);
 
     // Separator line
     ctx.strokeStyle = '#e2e8f0';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(50, 185);
-    ctx.lineTo(width - 50, 185);
+    ctx.moveTo(50, 170);
+    ctx.lineTo(width - 50, 170);
     ctx.stroke();
 
     // Table of Specifications
     const items = [
+      { key: 'Name', val: cardResName.textContent },
       { key: 'Gender & Age', val: cardResGenderAge.textContent },
+      { key: 'Zodiac Sign', val: cardResZodiac.textContent },
       { key: 'Physical Build', val: cardResPhysical.textContent },
       { key: 'Occupation', val: cardResJob.textContent },
-      { key: 'Hobby', val: cardResHobby.textContent },
-      { key: 'Personality', val: cardResPersonality.textContent }
+      { key: 'Monthly Salary', val: cardResSalary.textContent },
+      { key: 'Personality (MBTI)', val: cardResPersonality.textContent }
     ];
 
-    let startY = 225;
+    let startY = 195;
     items.forEach((item, index) => {
       // Row box
       ctx.fillStyle = index % 2 === 0 ? '#f8fafc' : '#ffffff';
-      ctx.fillRect(50, startY, width - 100, 60);
+      ctx.fillRect(50, startY, width - 100, 56);
       ctx.strokeStyle = '#e2e8f0';
-      ctx.strokeRect(50, startY, width - 100, 60);
+      ctx.strokeRect(50, startY, width - 100, 56);
 
       // Key
       ctx.fillStyle = '#64748b';
       ctx.font = '600 14px "Plus Jakarta Sans", sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
-      ctx.fillText(item.key, 70, startY + 30);
+      ctx.fillText(item.key, 70, startY + 28);
 
       // Val
       ctx.fillStyle = '#0f172a';
       ctx.font = 'bold 15px "Plus Jakarta Sans", sans-serif';
       ctx.textAlign = 'right';
-      ctx.fillText(item.val, width - 70, startY + 30);
+      ctx.fillText(item.val, width - 70, startY + 28);
 
-      startY += 75;
+      startY += 68;
     });
 
     // Footer
     ctx.textAlign = 'center';
     ctx.fillStyle = '#94a3b8';
     ctx.font = '500 13px "Plus Jakarta Sans", sans-serif';
-    ctx.fillText('Generated via Ideal Partner Gacha', width / 2, 720);
+    ctx.fillText('Generated via Ideal Partner Gacha', width / 2, 795);
 
     // Download trigger
     const link = document.createElement('a');

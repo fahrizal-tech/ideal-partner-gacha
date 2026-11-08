@@ -694,7 +694,7 @@ body {
   }
 
   .rope-container {
-    min-width: 860px;
+    min-width: 1050px;
   }
 }
 
@@ -735,7 +735,7 @@ body {
   }
 
   .rope-container {
-    min-width: 800px;
+    min-width: 980px;
     padding: 60px 0 24px 0;
   }
 
