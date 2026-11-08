@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ideal Partner Gacha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <span class="brand-title">Ideal Partner Gacha</span>
+      </div>
+
+      <div class="top-controls">
+        <div class="segmented-wrapper">
+          <span class="segmented-label">Target</span>
+          <div class="segmented-tabs">
+            <label class="tab-item">
+              <input type="radio" name="genderPref" value="any" checked>
+              <span>Any</span>
+            </label>
+            <label class="tab-item">
+              <input type="radio" name="genderPref" value="male">
+              <span>Male</span>
+            </label>
+            <label class="tab-item">
+              <input type="radio" name="genderPref" value="female">
+              <span>Female</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="utility-buttons">
+          <button class="btn-util" id="speedToggle" type="button" title="Toggle Speed">
+            <span id="speedLabel">Fast Mode: Off</span>
+          </button>
+          <button class="btn-util" id="soundToggle" type="button" title="Toggle Sound">
+            <span id="soundLabel">Sound: On</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Area -->
+    <main class="main-workspace">
+      <div class="workspace-header">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span id="statusMessage">Ready</span>
+        </div>
+        <p class="workspace-instructions">The indicator moves sequentially from left to right across each attribute.</p>
+      </div>
+
+      <!-- Horizontal Rope & 7 Large Bubbles -->
+      <div class="rope-container" id="ropeContainer">
+        <!-- Physical Rope Bar -->
+        <div class="rope-line-track">
+          <div class="rope-line-fill" id="ropeLineFill"></div>
+        </div>
+
+        <!-- Sliding Knob / Traveler on the Rope -->
+        <div class="rope-slider-knob" id="ropeSliderKnob"></div>
+
+        <!-- 7 Large Circular Bubbles -->
+        <div class="bubbles-row" id="bubblesRow">
+          <!-- 1. Gender -->
+          <div class="bubble-unit active" data-index="0" data-key="gender" id="unit-gender">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Gender</span>
+              <span class="tag-value" id="val-gender">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="4"></circle>
+                  <path d="M6 20v-2a6 6 0 0 1 12 0v2"></path>
+                </svg>
+                <span class="bubble-ticker" id="ticker-gender">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="gender" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">1. Gender</span>
+          </div>
+
+          <!-- 2. Age -->
+          <div class="bubble-unit" data-index="1" data-key="age" id="unit-age">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Age</span>
+              <span class="tag-value" id="val-age">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span class="bubble-ticker" id="ticker-age">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="age" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">2. Age</span>
+          </div>
+
+          <!-- 3. Height -->
+          <div class="bubble-unit" data-index="2" data-key="height" id="unit-height">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Height</span>
+              <span class="tag-value" id="val-height">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="2" x2="12" y2="22"></line>
+                  <polyline points="7 7 12 2 17 7"></polyline>
+                  <polyline points="7 17 12 22 17 17"></polyline>
+                </svg>
+                <span class="bubble-ticker" id="ticker-height">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="height" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">3. Height</span>
+          </div>
+
+          <!-- 4. Weight -->
+          <div class="bubble-unit" data-index="3" data-key="weight" id="unit-weight">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Weight</span>
+              <span class="tag-value" id="val-weight">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 3h12l4 6-10 12L2 9z"></path>
+                </svg>
+                <span class="bubble-ticker" id="ticker-weight">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="weight" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">4. Weight</span>
+          </div>
+
+          <!-- 5. Occupation -->
+          <div class="bubble-unit" data-index="4" data-key="job" id="unit-job">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Occupation</span>
+              <span class="tag-value" id="val-job">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <span class="bubble-ticker" id="ticker-job">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="job" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">5. Occupation</span>
+          </div>
+
+          <!-- 6. Hobby -->
+          <div class="bubble-unit" data-index="5" data-key="hobby" id="unit-hobby">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Hobby</span>
+              <span class="tag-value" id="val-hobby">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span class="bubble-ticker" id="ticker-hobby">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="hobby" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">6. Hobby</span>
+          </div>
+
+          <!-- 7. Personality -->
+          <div class="bubble-unit" data-index="6" data-key="personality" id="unit-personality">
+            <div class="bubble-result-tag">
+              <span class="tag-title">Personality</span>
+              <span class="tag-value" id="val-personality">—</span>
+            </div>
+            <div class="bubble-circle">
+              <div class="bubble-inner">
+                <svg class="unit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span class="bubble-ticker" id="ticker-personality">Ready</span>
+              </div>
+              <button class="bubble-lock-toggle" data-key="personality" title="Lock this attribute" type="button">
+                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </button>
+            </div>
+            <span class="bubble-caption">7. Personality</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Action Bar -->
+    <footer class="bottom-bar">
+      <div class="meta-status">
+        <span id="lockedCountText">0 attributes locked</span>
+      </div>
+
+      <div class="action-wrap">
+        <button class="btn-execute" id="executeBtn" type="button">
+          <span id="executeBtnText">Start Gacha</span>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Pop-up Card Modal (Clean White/Blue/Black Card) -->
+  <div class="modal-scrim" id="profileModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="profile-card" id="profileCard">
+        <div class="card-header">
+          <div class="card-brand">
+            <span class="card-badge">Partner Profile</span>
+          </div>
+          <button class="card-close-btn" id="closeModalBtn" type="button" title="Close modal">✕</button>
+        </div>
+
+        <div class="card-identity">
+          <div class="identity-avatar" id="cardAvatarIcon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="identity-text">
+            <h2 class="identity-title" id="cardPrimaryTitle">Partner Profile</h2>
+            <p class="identity-subtitle" id="cardSecondaryTitle">Generated Profile Specification</p>
+          </div>
+        </div>
+
+        <div class="spec-table">
+          <div class="spec-row">
+            <span class="spec-key">Gender & Age</span>
+            <span class="spec-val" id="cardResGenderAge">—</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Physical Build</span>
+            <span class="spec-val" id="cardResPhysical">—</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Occupation</span>
+            <span class="spec-val" id="cardResJob">—</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Hobby</span>
+            <span class="spec-val" id="cardResHobby">—</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Personality</span>
+            <span class="spec-val" id="cardResPersonality">—</span>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-card-action btn-secondary" id="downloadCardBtn" type="button">Export Image</button>
+          <button class="btn-card-action btn-primary" id="rerollModalBtn" type="button">Roll Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export Canvas -->
+  <canvas id="exportCanvas" style="display:none;"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
